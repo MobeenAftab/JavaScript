@@ -19,7 +19,7 @@ var barChart = function () {
         });
 };
 
-var SVG = function() {
+var circle = function() {
     let w = 500;
     let h = 50;
 
@@ -62,20 +62,39 @@ var barChart2 = function() {
         .data(dataset)
         .enter()
         .append("rect")
-        .attr("x", 0)
+        .attr("x", function(d, i) {
+            return i * (w / dataset.length); // Bar width padding
+        })
         .attr("y", function(d) {
             // Draw barChart from bottom up
-            return h - d;   // Height minus data value
+            return h - (d * 4);   // Height minus data value
         })
         .attr("width", w / dataset.length -	barPadding)
         .attr("height", function(d) {
             return d * 4;
         })
-        .attr("x", function(d, i) {
-            return i * (w / dataset.length); // Bar width padding
-        })
         .attr("fill", function(d) {
             // Dual encoding the data values colours
             return "rgb(0, 0, " + Math.round(d * 10) + ")";
         });
+
+    // Print data values as labels
+    svg.selectAll("text")
+        .data(dataset)
+        .enter()
+        .append("text")
+        .text(function(d) {
+            return d;
+        })
+        .attr("x", function(d, i) {
+            return i * (w / dataset.length) + 
+            (w / dataset.length - barPadding) / 2;
+        })
+        .attr("y", function(d) {
+            return h - (d * 4) + 14;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .attr("fill", "white")
+        .attr("text-anchor", "middle");
 }
