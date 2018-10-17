@@ -71,6 +71,8 @@ let barChart = function () {
             //Update scale domain
             //Recalibrate the scale domain, given the new max value in dataset
             yScale.domain([0, d3.max(dataset)]);
+            xScale.domain(d3.range(dataset.length));
+
             //Update all rects
             svg.selectAll("rect")
                 .data(dataset)
