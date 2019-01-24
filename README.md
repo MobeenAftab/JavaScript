@@ -7,18 +7,18 @@ JavaScript code snippets, patterns and notes
 Contains patterns that can be used in the JavaScript
 
 #### TODO
-Class/namespace interface definition.
-Method chaining.
-IIFE.
-    - Begin Js file with ; to end any previous code execution.
-    - Code wrapped up in an IFFE wont clash with other namespaces.
-Converting function statment to function expression.
-Set default function parameters.
-Arguments and sread.
-Function factories.
-Function borrowing.
-Function currying.
-Functional Programming.
+* Class/namespace interface definition.
+* Method chaining.
+* IIFE.
+    * Begin Js file with ; to end any previous code execution.
+    * Code wrapped up in an IFFE wont clash with other namespaces.
+* Converting function statment to function expression.
+* Set default function parameters.
+* Arguments and sread.
+* Function factories.
+* Function borrowing.
+* Function currying.
+* Functional Programming.
 
 ### JS Basics
 Learning Javascrips syntax and features.
